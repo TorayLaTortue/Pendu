@@ -1,10 +1,12 @@
 #include <stdio.h>
 
-int main(void)
+char main(void)
  {
-    char nom = " ";
+    char nom;
+    char mot;
 
 
     scanf("%c \n", nom);
+    printf(nom);
     
  }
