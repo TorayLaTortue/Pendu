@@ -1,12 +1,11 @@
 #include <stdio.h>
 
-char main(void)
+int main(void)
  {
-    char nom;
-    char mot;
-
-
-    scanf("%c \n", nom);
-    printf(nom);
+    char nom[20]; 
+    printf("Entrez un Nom : ");
+    scanf("%s", nom);
+    printf("Vous avez entré le nom : %s\n", nom);
+    return 0;
     
  }
