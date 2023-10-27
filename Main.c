@@ -29,19 +29,23 @@ int main(void)
 
    }
    i = 0;
-   
+   printf("\n");
    while (victoire == 2)
    {
       scanf(" %c", &lettre);
       for(o = 0; o < a; o++)
       {
-         if (tab2[k] == lettre) 
+         if (tab2[o] == lettre) 
          {
-                lettreDejaUtilisee = 1;
+            lettreDejaUtilisee = 1;
+         }
+         else
+         {
+            lettreDejaUtilisee = 0;
          }
       }
       if (lettreDejaUtilisee = 0)
-      {+
+      {
          tab2[a] = lettre;
          a++;
       }
@@ -53,7 +57,7 @@ int main(void)
       printf("%c ", tab[i]);
 
    }
-   printf("Lettre deja utilisé : \n");
+   printf("\n Lettre deja utilisé : \n");
 for (k = 0; k < a; k++)// mettre toutes les lettres utilisé
    {
       
