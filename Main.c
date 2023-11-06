@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 
 int main(void)
- {
+{
    char nom[10]; 
    char mot[10];
    char lettre;
@@ -17,7 +18,7 @@ int main(void)
    char tab2[26];//tableau de lettre utilisé*
    int victoire = 2;//2 = partie en cours 1 = win 0 = lose 
    int lettreDejaUtilisee = 0;
-
+   int LettreTotalUtilisee = 0;
 
    printf("Bienvenue dans le jeu du pendu !\n");
    printf("Entrez un Nom (Max 10 charactere) : ");
@@ -31,27 +32,38 @@ int main(void)
    {
       tab[i] = '_';
       printf("%c ", tab[i]);
-
+       
    }
    i = 0;
-   printf("\n");
-   while (victoire == 2)
+
+   while (LettreTotalUtilisee < 8)
    {
+
       printf("\n");
-      lettreDejaUtilisee = 0;
       scanf(" %c", &lettre);
+
+      while(!isalpha(lettre)) //verifier si c'est bien une lettre qui est entrée
+      {
+        printf("Ceci n'est pas une lettre.\n \n");
+        scanf(" %c", &lettre);
+      }
+
+
       o = 0;
+      lettreDejaUtilisee = 0;
       for(o = 0; o < a; o++)
       {
          if (tab2[o] == lettre) //empechez de pouvoir mettre deux fois la meme lettre
          {
             lettreDejaUtilisee = 1;
+            LettreTotalUtilisee = LettreTotalUtilisee ++;
          }
       }
       if (lettreDejaUtilisee == 0)//si la lettre a pas ete utiliser la rajouter a la liste
       {
          tab2[a] = lettre;
          a++;
+         
       }
       
       
@@ -63,7 +75,7 @@ int main(void)
    }
    printf("\n Lettre deja utilisé : \n");
    k = 0;
-for (k = 0; k < a; k++)// mettre toutes les lettres utilisé
+   for (k = 0; k < a; k++)// mettre toutes les lettres utilisé
    {
       
       printf("%c , ", tab2[k]);
@@ -72,6 +84,7 @@ for (k = 0; k < a; k++)// mettre toutes les lettres utilisé
 
    }
    
-   return 0;
+   
+   printf("\n Lettre deja utilisé : \n");
 
- }
+}
