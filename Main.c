@@ -18,7 +18,6 @@ int main(void)
    char tab2[26];//tableau de lettre utilisé*
    int victoire = 2;//2 = partie en cours 1 = win 0 = lose 
    int lettreDejaUtilisee = 0;
-   int LettreTotalUtilisee = 0;
 
    printf("Bienvenue dans le jeu du pendu !\n");
    printf("Entrez un Nom (Max 10 charactere) : ");
@@ -36,7 +35,7 @@ int main(void)
    }
    i = 0;
 
-   while (LettreTotalUtilisee < 8)
+   while (a < 8)
    {
 
       printf("\n");
@@ -56,7 +55,6 @@ int main(void)
          if (tab2[o] == lettre) //empechez de pouvoir mettre deux fois la meme lettre
          {
             lettreDejaUtilisee = 1;
-            LettreTotalUtilisee = LettreTotalUtilisee ++;
          }
       }
       if (lettreDejaUtilisee == 0)//si la lettre a pas ete utiliser la rajouter a la liste
@@ -80,11 +78,26 @@ int main(void)
       
       printf("%c , ", tab2[k]);
    }
+
+
+
+   switch (a)
+{
+case 1:
+   printf("\n Pendu 1\n");
+    break;
    
+case 2:
+   printf("\n Pendu 2\n");
+    break;
+   
+default:
+    printf("Erreur");
+    break;
 
    }
    
    
-   printf("\n Lettre deja utilisé : \n");
+   printf("\n \n Finis ! \n");
 
 }
