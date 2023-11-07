@@ -66,14 +66,21 @@ int main(void)
       
       
       i = 0;
-      for (i = 0; i < longueur; i++)// montrer le mot en _
+      for (i = 0; i <= longueur; i++)// montrer le mot en _
    {
-      printf("%c ", tab[i]);
+   
 
 
-      
-
+      if (tab2[i] == mot[i])
+      {
+         printf("%c ", mot[i]);
+      }
+      else
+      {
+         printf("%c ", tab[i]);
+      }
    }
+
    printf("\n Lettre deja utilisé : \n");
    k = 0;
    for (k = 0; k < a; k++)// mettre toutes les lettres utilisé
