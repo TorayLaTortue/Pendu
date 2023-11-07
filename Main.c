@@ -12,11 +12,12 @@ int main(void)
    int a = 0;
    int k = 0;
    int o = 0;
+   int z = 0;
+   int e = 0;
    strcpy(mot, "tortue"); // mot tortue
    int longueur = strlen(mot);//longueur du mot
    char tab[longueur]; // tableau de _
    char tab2[26];//tableau de lettre utilisé*
-   //int victoire = 2;//2 = partie en cours 1 = win 0 = lose 
    int lettreDejaUtilisee = 0;//detecter si la valeur a ete utiliser
 
    printf("Bienvenue dans le jeu du pendu !\n");
@@ -40,6 +41,7 @@ int main(void)
 
       printf("\n");
       scanf(" %c", &lettre);
+      printf("\n");
 
       while(!isalpha(lettre)) //verifier si c'est bien une lettre qui est entrée
       {
@@ -66,19 +68,29 @@ int main(void)
       
       
       i = 0;
+      z = 0;
       for (i = 0; i <= longueur; i++)// montrer le mot en _
    {
-   
 
+      for(z = 0; z <= longueur; z++)//Remplacer les _ par les lettre trouver
+      {
+         if (tab2[z] == mot[i])
+      {
+         tab[i] = tab2[z];
+         
+      }
+      
+      }
+      printf("%c ", tab[i]);
 
-      if (tab2[i] == mot[i])
+      e = 0;
+      if (tab[i] == '_')
       {
-         printf("%c ", mot[i]);
+         e = 1;
       }
-      else
-      {
-         printf("%c ", tab[i]);
-      }
+      
+
+      
    }
 
    printf("\n Lettre deja utilisé : \n");
@@ -89,6 +101,9 @@ int main(void)
       printf("%c , ", tab2[k]);
    }
 
+   
+   
+   
 
 
    switch (a)
