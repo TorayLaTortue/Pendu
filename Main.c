@@ -109,12 +109,23 @@ int main(void)
    }
    
 
-
-   switch (a) {
-   case 0:
-      printf()
+   switch (a) { // Affichage du dessin
+      case 0:
+        printf("__________\n|__________|\n");
+      break;
+      
+      case 1:
+        printf("||\n||\n||\n||\n||\n||\n||\n||\n||_________\n|__________|\n");
+      break;
+      
+      case 2:
+        printf("__________\n|| /\n||/\n||\n||\n||\n||\n||\n||\n||_________\n|__________|\n");
       break;
    
+      case 3:
+        printf("__________\n|| /      |\n||/       |\n||\n||\n||\n||\n||\n||\n||_________\n|__________|\n");
+      break;
+
    default:
       break;
    }
