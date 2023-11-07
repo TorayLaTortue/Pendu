@@ -16,8 +16,8 @@ int main(void)
    int longueur = strlen(mot);//longueur du mot
    char tab[longueur]; // tableau de _
    char tab2[26];//tableau de lettre utilisé*
-   int victoire = 2;//2 = partie en cours 1 = win 0 = lose 
-   int lettreDejaUtilisee = 0;
+   //int victoire = 2;//2 = partie en cours 1 = win 0 = lose 
+   int lettreDejaUtilisee = 0;//detecter si la valeur a ete utiliser
 
    printf("Bienvenue dans le jeu du pendu !\n");
    printf("Entrez un Nom (Max 10 charactere) : ");
@@ -70,6 +70,9 @@ int main(void)
    {
       printf("%c ", tab[i]);
 
+
+      
+
    }
    printf("\n Lettre deja utilisé : \n");
    k = 0;
@@ -96,7 +99,7 @@ default:
     break;
 
    }
-   
+   }
    
    printf("\n \n Finis ! \n");
 
