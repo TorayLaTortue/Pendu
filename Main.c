@@ -56,6 +56,7 @@ int main(void)
             lettreDejaUtilisee = 1;
          }
       }
+      
       if (lettreDejaUtilisee == 0)//si la lettre a pas ete utilisée, la rajouter a la liste
       {
          tab2[a] = lettre;
@@ -65,26 +66,23 @@ int main(void)
       i = 0;
       z = 0;
       for (i = 0; i <= longueur; i++)// montrer le mot en _
-   {
-
-      for(z = 0; z <= longueur; z++)//Remplacer les _ par les lettres trouvées
       {
-         if (tab2[z] == mot[i])
+
+         for(z = 0; z <= longueur; z++)//Remplacer les _ par les lettres trouvées
          {
-            tab[i] = tab2[z];
+            if (tab2[z] == mot[i])
+            {
+               tab[i] = tab2[z];
+            }  
          }
-      
-      }
       printf("%c ", tab[i]);
 
       e = 0;
-      if (tab[i] == '_')
-      {
-         e = 1;
+         if (tab[i] == '_')
+         {
+               e = 1;
+         }
       }
-      
-
-   }
 
    printf("\n\nLettres déja utilisées :\n");
    k = 0;
@@ -93,116 +91,115 @@ int main(void)
       printf("%c , ", tab2[k]);
    }
 
-
-   if (!e) {
-      erreur++;
-      printf("\n\nErreur : la lettre n'est pas dans le mot mystère.\n");
-    
-    // Affichage du dessin
-      switch (erreur) {
-         case 1:
-            printf(" __________\n");
-            printf("|__________|\n");
-         break;
+      if (!e) {
+         erreur++;
+         printf("\n\nErreur : la lettre n'est pas dans le mot mystère.\n");
       
-         case 2:
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||_________\n");
-            printf("|__________|\n");
-         break;
+      // Affichage du dessin
+         switch (erreur) {
+            case 1:
+               printf(" __________\n");
+               printf("|__________|\n");
+            break;
+         
+            case 2:
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||_________\n");
+               printf("|__________|\n");
+            break;
+         
+            case 3:
+               printf(" __________\n");
+               printf("|| /\n");
+               printf("||/\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||_________\n");
+               printf("|__________|\n");
+            break;
       
-         case 3:
-            printf(" __________\n");
-            printf("|| /\n");
-            printf("||/\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||_________\n");
-            printf("|__________|\n");
-         break;
-   
-         case 4:
-            printf(" __________\n");
-            printf("|| /      |\n");
-            printf("||/       |\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||_________\n");
-            printf("|__________|\n");
-         break;
+            case 4:
+               printf(" __________\n");
+               printf("|| /      |\n");
+               printf("||/       |\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||_________\n");
+               printf("|__________|\n");
+            break;
 
-         case 5:
-            printf(" __________\n");
-            printf("|| /      |\n");
-            printf("||/       |\n");
-            printf("||       ( )\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||_________\n");
-            printf("|__________|\n");
-         break;
+            case 5:
+               printf(" __________\n");
+               printf("|| /      |\n");
+               printf("||/       |\n");
+               printf("||       ( )\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||_________\n");
+               printf("|__________|\n");
+            break;
 
-         case 6:
-             printf(" __________\n");
-            printf("|| /      |\n");
-            printf("||/       |\n");
-            printf("||       ( )\n");
-            printf("||        |\n");
-            printf("||        |\n");
-            printf("||        |\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||_________\n");
-            printf("|__________|\n");
-         break;
+            case 6:
+               printf(" __________\n");
+               printf("|| /      |\n");
+               printf("||/       |\n");
+               printf("||       ( )\n");
+               printf("||        |\n");
+               printf("||        |\n");
+               printf("||        |\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||_________\n");
+               printf("|__________|\n");
+            break;
 
-         case 7:
-            printf("__________\n");
-            printf("|| /      |\n");
-            printf("||/       |\n");
-            printf("||       ( )\n");
-            printf("||        |\n");
-            printf("||       /|\\n");
-            printf("||        |\n");
-            printf("||\n");
-            printf("||\n");
-            printf("||_________\n");
-            printf("|__________|\n");
-         break;
+            case 7:
+               printf("__________\n");
+               printf("|| /      |\n");
+               printf("||/       |\n");
+               printf("||       ( )\n");
+               printf("||        |\n");
+               printf("||       /|\\n");
+               printf("||        |\n");
+               printf("||\n");
+               printf("||\n");
+               printf("||_________\n");
+               printf("|__________|\n");
+            break;
 
-         case 8:
-            printf(" __________\n");
-            printf("|| /      |\n");
-            printf("||/       |\n");
-            printf("||      (+_+)\n");
-            printf("||        |\n");
-            printf("||       /|\\n");
-            printf("||        |\n");
-            printf("||       / \\n");
-            printf("||\n");
-            printf("||_________\n");
-            printf("|__________|\n");
-         break;
+            case 8:
+               printf(" __________\n");
+               printf("|| /      |\n");
+               printf("||/       |\n");
+               printf("||      (+_+)\n");
+               printf("||        |\n");
+               printf("||       /|\\n");
+               printf("||        |\n");
+               printf("||       / \\n");
+               printf("||\n");
+               printf("||_________\n");
+               printf("|__________|\n");
+            break;
+         }
       }
-   }
    }
    
    printf("\n \n Finis ! \n");
