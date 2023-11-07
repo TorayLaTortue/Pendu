@@ -91,9 +91,10 @@ int main(void)
       printf("%c , ", tab2[k]);
    }
 
-      if (!e) {
+      if (lettre =! e) {
+         a ++;
          erreur++;
-         printf("\n\nErreur : la lettre n'est pas dans le mot mystère.\n");
+         printf("\n\nERREUR : la lettre n'est pas dans le mot mystère.\n");
       
       // Affichage du dessin
          switch (erreur) {
@@ -177,7 +178,7 @@ int main(void)
                printf("||/       |\n");
                printf("||       ( )\n");
                printf("||        |\n");
-               printf("||       /|\\n");
+               printf("||       /|\\ \n");
                printf("||        |\n");
                printf("||\n");
                printf("||\n");
@@ -191,9 +192,9 @@ int main(void)
                printf("||/       |\n");
                printf("||      (+_+)\n");
                printf("||        |\n");
-               printf("||       /|\\n");
+               printf("||       /|\\ \n");
                printf("||        |\n");
-               printf("||       / \\n");
+               printf("||       / \\ \n");
                printf("||\n");
                printf("||_________\n");
                printf("|__________|\n");
