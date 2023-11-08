@@ -1,9 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
+#include <time.h>
+
+//VARIABLES
+   int y = 8;
+   int dessin = 0;
 
 void dessinPendu (int dessin) {
-    if () {
+    if (y--) {
         dessin++;
         printf("\n\nERREUR : la lettre n'est pas dans le mot mystère.\n");
       
