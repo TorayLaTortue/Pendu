@@ -1,6 +1,6 @@
 
 
- #include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -8,17 +8,15 @@
 
 int main(void)
 {
-   char nom[10]; 
+   char nom[10] = "Aucun nom"; 
    char mot[10];
    char lettre;
    char randomMot;
    int i = 0;
    int a = 0;
-   int k = 0;
-   int o = 0;
    int z = 0;
-   int j = 0;
-   int y = 0;
+   int y = 8;
+   int q = 0;
    int MotTrouver = 0; //1 = mot trouve
    char tab2[26];//tableau de lettre utilisé*
    int lettreDejaUtilisee = 0;//detecter si la valeur a ete utiliser
@@ -42,9 +40,11 @@ int main(void)
             break; // Sortir de la boucle une fois que la ligne aléatoire a été lue
         }
    }
+   fclose(fichier); 
    strncpy(mot, ligne, 10);
    ligne[strcspn(ligne, "\n")] = '\0';
    mot[10] = '\0';
+
 
    int longueur = strlen(mot) - 1;//longueur du mot
    char tab[longueur]; // tableau de _
@@ -56,9 +56,11 @@ int main(void)
    }
    i = 0;
 
-   while (y < 8)
+   while (y > 0)
    {
       MotTrouver = 1;
+      printf("\n Nombre d'essaie restant : %d \n",y);
+
       printf("\n");
       scanf(" %c", &lettre);
       printf("\n");
@@ -68,11 +70,11 @@ int main(void)
         scanf(" %c", &lettre);
       }
 
-      o = 0;
+      i = 0;
       lettreDejaUtilisee = 0;
-      for(o = 0; o < a; o++)
+      for(i = 0; i < a; i++)
       {
-         if (tab2[o] == lettre) //empechez de pouvoir mettre deux fois la meme lettre
+         if (tab2[i] == lettre) //empechez de pouvoir mettre deux fois la meme lettre
          {
             lettreDejaUtilisee = 1;
          }
@@ -109,22 +111,27 @@ int main(void)
    }
    
    i = 0;
-   
+   q = 0;
    for (i = 0; i < longueur; i++)// nombre d'essaie
    {
          if (lettre == mot[i])
          {
+            q = 1;
             break;
          }
                
    }
+   if (q == 0)
+   {
+      y--;
+   }
    
 
    printf("\n Lettre deja utilisé : \n");
-   k = 0;
-   for (k = 0; k < a; k++)// mettre toutes les lettres utilisé
+   i = 0;
+   for (i = 0; i < a; i++)// mettre toutes les lettres utilisé
    {
-      printf("%c , ", tab2[k]);
+      printf("%c , ", tab2[i]);
    }
    
    
@@ -136,7 +143,7 @@ int main(void)
    
 
 
-   switch (a)
+   switch (y)
 {
 case 1:
    printf("\n Pendu 1\n");
