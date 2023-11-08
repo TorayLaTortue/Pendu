@@ -8,7 +8,7 @@ int main(void)
    char mot[10];
    char lettre;
    int i = 0;
-   int a = 0; // compteur essais
+   int a = 0;
    int k = 0;
    int o = 0;
    int z = 0;
@@ -91,116 +91,8 @@ int main(void)
       printf("%c , ", tab2[k]);
    }
 
-      if (lettre =! e) {
-         a ++;
-         erreur++;
-         printf("\n\nERREUR : la lettre n'est pas dans le mot mystère.\n");
-      
-      // Affichage du dessin
-         switch (erreur) {
-            case 1:
-               printf(" __________\n");
-               printf("|__________|\n");
-            break;
-         
-            case 2:
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||_________\n");
-               printf("|__________|\n");
-            break;
-         
-            case 3:
-               printf(" __________\n");
-               printf("|| /\n");
-               printf("||/\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||_________\n");
-               printf("|__________|\n");
-            break;
-      
-            case 4:
-               printf(" __________\n");
-               printf("|| /      |\n");
-               printf("||/       |\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||_________\n");
-               printf("|__________|\n");
-            break;
+   extern void dessinPendu(int dessin);
 
-            case 5:
-               printf(" __________\n");
-               printf("|| /      |\n");
-               printf("||/       |\n");
-               printf("||       ( )\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||_________\n");
-               printf("|__________|\n");
-            break;
-
-            case 6:
-               printf(" __________\n");
-               printf("|| /      |\n");
-               printf("||/       |\n");
-               printf("||       ( )\n");
-               printf("||        |\n");
-               printf("||        |\n");
-               printf("||        |\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||_________\n");
-               printf("|__________|\n");
-            break;
-
-            case 7:
-               printf("__________\n");
-               printf("|| /      |\n");
-               printf("||/       |\n");
-               printf("||       ( )\n");
-               printf("||        |\n");
-               printf("||       /|\\ \n");
-               printf("||        |\n");
-               printf("||\n");
-               printf("||\n");
-               printf("||_________\n");
-               printf("|__________|\n");
-            break;
-
-            case 8:
-               printf(" __________\n");
-               printf("|| /      |\n");
-               printf("||/       |\n");
-               printf("||      (+_+)\n");
-               printf("||        |\n");
-               printf("||       /|\\ \n");
-               printf("||        |\n");
-               printf("||       / \\ \n");
-               printf("||\n");
-               printf("||_________\n");
-               printf("|__________|\n");
-            break;
-         }
-      }
    }
    
    printf("\n \n Finis ! \n");
