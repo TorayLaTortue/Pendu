@@ -6,7 +6,7 @@
 
 int main(void) {
 // VARIABLES
-   char nom[10] = "Aucun nom"; 
+   char nom[10] = "Aucun nom";
    char mot[10];
    char lettre;
    char randomMot;
