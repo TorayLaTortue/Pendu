@@ -16,8 +16,8 @@ int main(void) {
    int y = 8;
    int q = 0;
    int motTrouve = 0; //1 = mot trouvé
-   char tab2[26];//tableau de lettres utilisées
-   int lettreDejaUtilisee = 0;//detecter si la valeur a été utilisée
+   char tab2[26]; //tableau de lettres utilisées
+   int lettreDejaUtilisee = 0; //detecter si la valeur a été utilisée
    int dessin = 0;
 
 // DEBUT DU JEU
@@ -39,7 +39,7 @@ int main(void) {
         if (numeroLigne == nombreAleatoire) {
             printf("Ligne: %s", ligne);
             break; // Sortir de la boucle une fois que la ligne aléatoire a été lue
-        }
+         }
    }
 
    fclose(fichier); 
@@ -60,7 +60,7 @@ int main(void) {
 
    while (y > 0) {
       motTrouve = 1;
-      printf("\n Nombre d'essais restants : %d \n",y);
+      printf("\n Nombre d'essais restants : %d \n", y);
       printf("\n");
       scanf(" %c", &lettre);
       printf("\n");
@@ -79,7 +79,7 @@ int main(void) {
          }
       }
 
-      if (lettreDejaUtilisee == 0) {//si la lettre n'a pas ete utilisée, la rajouter a la liste
+      if (lettreDejaUtilisee == 0) {//si la lettre n'a pas ete utilisée la rajouter a la liste
          tab2[a] = lettre;
          a++;
       }
