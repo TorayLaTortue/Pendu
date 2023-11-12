@@ -7,14 +7,14 @@
 
 int main(void) {
 // VARIABLES
-   char nom[11] = "Aucun nom"; 
+   char nom[11] = "Aucun nom"; // [11] pour intégrer le \0
    char mot[11];
    char lettre;
    char randomMot;
    int i = 0;
    int a = 0;
    int z = 0;
-   int y = 8;
+   int vie = 8; // nombre d'essais
    int q = 0;
    int motTrouve = 0; //1 = mot trouvé
    char tab2[26]; //tableau de lettres utilisées
@@ -23,11 +23,19 @@ int main(void) {
 
 // DEBUT DU JEU
    printf("Bienvenue dans le jeu du pendu !\n");
-   printf("Entrez un nom (max 10 caractères) : ");
-   scanf("%10s", nom); // Limite la saisie à 10 caractères
-   printf("Vous avez entré le nom : %s\n\n", nom);
-   printf("Règles : Trouvez le mot secret, une lettre après l'autre.\nLes caractères spéciaux, chiffres et accents ne sont pas pris en compte.\nNombre d'essais maximum : 8\nÀ vous de jouer !\n\n");
 
+   do // Tentative de limiter le nombre de caractères du nom à 10 max
+   {
+      printf("Entrez un Nom (Max 10 charactere) : ");
+      scanf("%10s", nom);
+      
+      if (strlen(nom) > 10) {
+         printf("Erreur. Merci de rentrer un nom  long de 10 caractères ou moins.");
+      }
+   } while (strlen(nom) <= 10);
+
+   printf("Vous avez entré le nom : %s\n", nom);
+   printf("Règles : Trouvez le mot secret, une lettre après l'autre.\nAttention : Les caractères spéciaux, chiffres et accents ne sont pas pris en compte.\nNombre d'erreurs autorisées : 7\n\nÀ vous de jouer !\n\n");
 
    srand(time(NULL)); //Choisir une valeur aléatoire par rapport à l'heure
    int nombreAleatoire = (rand() % 835);
@@ -51,7 +59,6 @@ int main(void) {
    int longueur = strlen(mot) - 1; // Longueur du mot
    char tab[longueur]; // tableau de _
 
-
    for (i = 0; i < longueur; i++) { // mettre des _ pour chaque lettre
       tab[i] = '_';
       printf("%c ", tab[i]);
@@ -59,9 +66,9 @@ int main(void) {
 
    i = 0;
 
-   while (y > 0) {
+   while (vie > 0) {
       motTrouve = 1;
-      printf("\n Nombre d'essais restants : %d \n", y);
+      printf("\n Nombre d'essais restants : %d \n", vie);
       printf("\n");
       scanf(" %c", &lettre);
       printf("\n");
@@ -113,12 +120,10 @@ int main(void) {
    }
 
    if (q == 0) {
-      y--;
+      vie--;
       dessin++;
       printf("\n\nERREUR : la lettre n'est pas dans le mot mystère.\n");
 
-
-   // Affichage du dessin
       void dessinPendu (int dessin);
    }
 
@@ -138,7 +143,8 @@ int main(void) {
    }
    
    if (motTrouve == 0) {
-      printf("\n \n Perdu le mot était : %s ! \n", mot);
+      printf("\n \n PERDU ! Le mot était : %s.\n", mot);
    }
 
+   return 0;
 }
