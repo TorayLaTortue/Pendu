@@ -15,7 +15,7 @@ int main(void)
    int i = 0;
    int a = 0;
    int z = 0;
-   int y = 8;
+   int y = 0;
    int q = 0;
    int MotTrouver = 0; //1 = mot trouve
    char tab2[26];//tableau de lettre utilisé*
@@ -24,6 +24,12 @@ int main(void)
    printf("Bienvenue dans le jeu du pendu !\n");
    printf("Entrez un Nom (Max 10 charactere) : ");
    scanf("%s", nom);
+   while(!isalpha(nom)) //verifier si c'est bien une lettre qui est entrée
+      {
+        printf("Ceci n'est pas une lettre.\n \n");
+        printf("Entrez un Nom (Max 10 charactere) : ");
+        scanf(" %c", &mot);
+      }
    printf("Vous avez entré le nom : %s\n", nom);
 
 
@@ -36,7 +42,7 @@ int main(void)
    while(fgets(ligne, sizeof(ligne), fichier) != NULL) {
         numeroLigne++;
         if (numeroLigne == nombreAleatoire) {
-          printf("Ligne: %s", ligne);
+            printf("Ligne: %s", ligne); //Print la solution au debut
             break; // Sortir de la boucle une fois que la ligne aléatoire a été lue
         }
    }
@@ -49,17 +55,17 @@ int main(void)
    int longueur = strlen(mot) - 1;//longueur du mot
    char tab[longueur]; // tableau de _
 
-   for (i = 0; i < longueur; i++)// mettre des _ pour chaque lettre
-   {
+   for (i = 0; i < longueur; i++){// mettre des _ pour chaque lettre
+
       tab[i] = '_';     
       printf("%c ", tab[i]);
    }
    i = 0;
 
-   while (y > 0)
+   while (y < 8)
    {
       MotTrouver = 1;
-      printf("\n Nombre d'essaie restant : %d \n",y);
+      printf("\n Nombre d'essaie restant : %d /8 \n",y);
 
       printf("\n");
       scanf(" %c", &lettre);
@@ -90,7 +96,7 @@ int main(void)
       i = 0;
       z = 0;
       for (i = 0; i < longueur; i++)// montrer le mot en _
-   {
+      {
 
       for(z = 0; z <= longueur; z++)//Remplacer les _ par les lettre trouver
       {
@@ -102,13 +108,14 @@ int main(void)
 
       printf("%c ", tab[i]);
       
+
       if (tab[i] == '_')
       {
          MotTrouver = 0;
       }
       
 
-   }
+      }
    
    i = 0;
    q = 0;
@@ -123,28 +130,27 @@ int main(void)
    }
    if (q == 0)
    {
-      y--;
+      y++;
    }
    
 
    printf("\n Lettre deja utilisé : \n");
    i = 0;
-   for (i = 0; i < a; i++)// mettre toutes les lettres utilisé
+   for (i = 0; i < a; i++)// mettre toutes les lettres qui ont ete utilisé
    {
       printf("%c , ", tab2[i]);
    }
    
-   
    if (MotTrouver == 1)
    {
-      printf("\n \n Bravo %s vous avez reussi en %d essai \n", nom, a);
+      printf("\n \n Bravo %s vous avez reussi en %d essai \n", nom, y);
       break;
    }
    
 
 
    switch (y)
-{
+   {
 case 1:
    printf("\n Pendu 1\n");
     break;
@@ -154,17 +160,16 @@ case 2:
     break;
    
 default:
-    printf("Erreur");
+    printf("\n.");
     break;
 
    }
-   }
-   
+
+}
 
    if (MotTrouver == 0)
    {
       printf("\n \n Perdu le mot était : %s ! \n", mot);
    }
-   
 
 }
