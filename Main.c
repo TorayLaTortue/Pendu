@@ -197,7 +197,7 @@ int main(void) {
             printf("__________\n");
             printf("|| /      |\n");
             printf("||/       |\n");
-            printf("||       ( )\n");
+            printf("||      (UwU)\n");
             printf("||        |\n");
             printf("||       /|\\ \n");
             printf("||        |\n");
@@ -211,7 +211,7 @@ int main(void) {
             printf(" __________\n");
             printf("|| /      |\n");
             printf("||/       |\n");
-            printf("||      (+_+)\n");
+            printf("||      (+w+)\n");
             printf("||        |\n");
             printf("||       /|\\ \n");
             printf("||        |\n");
