@@ -4,17 +4,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-//VARIABLES
-   int y = 8;
-   int dessin = 0;
+const char getTexte(int y) {
 
-void dessinPendu (int dessin) {
-    if (y--) {
-        dessin++;
-        printf("\n\nERREUR : la lettre n'est pas dans le mot mystère.\n");
-      
-      // Affichage du dessin
-        switch (dessin) {
+        switch (y) {
             case 1:
                printf(" __________\n");
                printf("|__________|\n");
@@ -118,4 +110,3 @@ void dessinPendu (int dessin) {
             break;
         }
     }
-}
