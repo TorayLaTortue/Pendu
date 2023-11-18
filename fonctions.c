@@ -4,7 +4,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-const char getTexte(int y) {
+
+int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+const char ImagePendue (int y) {
 
         switch (y) {
             case 1:
