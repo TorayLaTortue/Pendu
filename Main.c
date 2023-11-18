@@ -24,7 +24,7 @@ int main(void)
    printf("Bienvenue dans le jeu du pendu !\n");
    printf("Entrez un Nom (Max 10 charactere) : ");
    scanf("%s", nom);
-   while(!isalpha(nom)) //verifier si c'est bien une lettre qui est entrée
+   while(isalpha(nom)) //verifier si c'est bien une lettre qui est entrée
       {
         printf("Ceci n'est pas une lettre.\n \n");
         printf("Entrez un Nom (Max 10 charactere) : ");
@@ -65,7 +65,7 @@ int main(void)
    while (y < 8)
    {
       MotTrouver = 1;
-      printf("\n Nombre d'essaie restant : %d /8 \n",y);
+      printf("\n Nombre d'essaie restant : %d / 8 \n",y);
 
       printf("\n");
       scanf(" %c", &lettre);
