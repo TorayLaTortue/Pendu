@@ -16,6 +16,7 @@ int main(void)
    int z = 0;
    int y = 0;
    int q = 0;
+   int score = 0;
    int MotTrouver = 0; //1 = mot trouve
    char tab2[26];//tableau de lettre utilisé*
    int lettreDejaUtilisee = 0;//detecter si la valeur a ete utiliser
@@ -28,7 +29,7 @@ int main(void)
       {
         printf("Ceci n'est pas une lettre.\n \n");
         printf("Entrez un Nom (Max 10 charactere) : ");
-        scanf(" %c", &mot);
+        scanf(" %s", &mot);
       }
    printf("Vous avez entré le nom : %s\n", nom);
 
@@ -47,7 +48,7 @@ int main(void)
         }
    }
    fclose(fichier); 
-   strncpy(mot, ligne, 10);
+   strncpy(mot, ligne, 100);
    ligne[strcspn(ligne, "\n")] = '\0';
    mot[10] = '\0';
 
@@ -141,32 +142,19 @@ int main(void)
    if (MotTrouver == 1)
    {
       printf("\n \n Bravo %s vous avez reussi en %d essai \n", nom, y);
+      score = longueur - y;
+      printf("votre score est de : %d ", score);
+      fichierScore(score);
       break;
    }
    
-
-
-   switch (y)
-   {
-case 1:
-   printf("\n Pendu 1\n");
-    break;
-   
-case 2:
-   printf("\n Pendu 2\n");
-    break;
-   
-default:
-    printf("\n.");
-    break;
+   printf("\n \n");
+   ImagePendue(y);
 
    }
-
-}
-
    if (MotTrouver == 0)
    {
       printf("\n \n Perdu le mot était : %s ! \n", mot);
    }
-
+   
 }
