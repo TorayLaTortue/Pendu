@@ -19,6 +19,7 @@ int main(void)
    int MotTrouver = 0; //1 = mot trouve
    char tab2[26];//tableau de lettre utilisé*
    int lettreDejaUtilisee = 0;//detecter si la valeur a ete utiliser
+   
 
    printf("Bienvenue dans le jeu du pendu !\n");
    printf("Entrez un Nom (Max 10 charactere) : ");
