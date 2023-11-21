@@ -142,9 +142,9 @@ int main(void)
    if (MotTrouver == 1)
    {
       printf("\n \n Bravo %s vous avez reussi en %d essai \n", nom, y);
-      score = longueur - y;
+      score = longueur * 2.5 - y;
       printf("votre score est de : %d ", score);
-      fichierScore(score);
+      fichierScore(score, nom);
       break;
    }
    
