@@ -64,7 +64,10 @@ int topScore() {
     // Affichage des scores triés
     printf("\nTop 10 :\n");
     for (int j = 0; j < 10; j++) {
-        printf("Score de %s : %d\n", tabValeur[j].nom, tabValeur[j].score);}
+        printf("Score de %s \n", tabValeur[j].nom);
+
+         
+        }
     // Libération de la mémoire allouée dynamiquement
     free(tabValeur);
     fclose(fichier);
