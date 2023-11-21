@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Structure pour stocker les scores et les noms associés
+//stocker les scores et les noms associés
 typedef struct {
     char nom[20];
     int score;
@@ -10,7 +10,6 @@ typedef struct {
 
 // Fonction de comparaison pour qsort
 int compareScores(const void *a, const void *b) {
-    // Retourner la différence dans l'ordre inverse
     return ((ScoreEntry*)b)->score - ((ScoreEntry*)a)->score;
 }
 
@@ -26,12 +25,11 @@ int topScore() {
         perror("Erreur lors de l'ouverture du fichier");
         return 1;
     }
-
     // Allocation dynamique du tableau de structures ScoreEntry
     tabValeur = (ScoreEntry *)malloc(sizeof(ScoreEntry));
 
     if (tabValeur == NULL) {
-        perror("Erreur d'allocation de mémoire");
+        perror("Erreur memoire");
         fclose(fichier);
         return 1;
     }
@@ -42,11 +40,7 @@ int topScore() {
 
         // Essaye de lire le score à partir de la ligne
         if (sscanf(ligne, "Score de %*s : %d", &score) == 1) {
-            // Imprime la valeur du score
-            
             sscanf(ligne, "Score de %[^\n]", nom);
-           
-
             // Ajuste la taille du tableau et ajoute le score et le nom
             tabValeur = (ScoreEntry *)realloc(tabValeur, (i + 1) * sizeof(ScoreEntry));
             if (tabValeur == NULL) {
@@ -70,13 +64,9 @@ int topScore() {
     // Affichage des scores triés
     printf("\nTop 10 :\n");
     for (int j = 0; j < 10; j++) {
-        printf("Score de %s : %d\n", tabValeur[j].nom, tabValeur[j].score);
-    }
-    printf("%d",tabValeur[i].score);
-
+        printf("Score de %s : %d\n", tabValeur[j].nom, tabValeur[j].score);}
     // Libération de la mémoire allouée dynamiquement
     free(tabValeur);
-
     fclose(fichier);
 
     return 0;
