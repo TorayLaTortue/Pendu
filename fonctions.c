@@ -23,8 +23,10 @@ int fichierScore(int c, char *n){
     fclose(fichier);
 }
 
-
-
+int scoreTrier()
+{
+   
+}
 
 
 const char ImagePendue(int y) {
