@@ -8,7 +8,7 @@
 int main(void)
 {
    char nom[10] = "Aucun nom"; 
-   char mot[10];
+   char mot[25];
    char lettre;
    char randomMot;
    int i = 0;
@@ -29,7 +29,7 @@ int main(void)
       {
         printf("Ceci n'est pas une lettre.\n \n");
         printf("Entrez un Nom (Max 10 charactere) : ");
-        scanf(" %s", &mot);
+        scanf(" %s", &nom);
       }
    printf("Vous avez entré le nom : %s\n", nom);
 
@@ -51,12 +51,11 @@ int main(void)
    strncpy(mot, ligne, 100);
    ligne[strcspn(ligne, "\n")] = '\0';
    mot[10] = '\0';
-
-
+   
    int longueur = strlen(mot) - 1;//longueur du mot
    char tab[longueur]; // tableau de _
 
-   for (i = 0; i < longueur; i++){// mettre des _ pour chaque lettre
+   for (i = 0; i <= longueur; i++){// mettre des _ pour chaque lettre
 
       tab[i] = '_';     
       printf("%c ", tab[i]);
@@ -94,10 +93,10 @@ int main(void)
 
       
 
-      for (i = 0; i < longueur; i++)// montrer le mot en _
+      for (i = 0; i <= longueur; i++)// montrer le mot en _
       {
 
-      for(z = 0; z <= max(longueur, a); z++)//Remplacer les _ par les lettre trouver
+      for(z = 0; z < max(longueur, a); z++)//Remplacer les _ par les lettre trouver
       {
          if (tab2[z] == mot[i])
          {
