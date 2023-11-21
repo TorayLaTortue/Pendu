@@ -25,7 +25,7 @@ int main(void)
    int lettreDejaUtilisee = 0;//detecter si la valeur a ete utiliser
    
    
-   printf("Bienvenue dans le jeu du pendu !\n");
+   printf("\n Bienvenue dans le jeu du pendu !\n");
    printf("Entrez un Nom (Max 10 charactere alphabetiques) : ");
    scanf("%s", nom);
    while(!isalpha(nom)) //verifier si c'est bien une lettre qui est entrée
