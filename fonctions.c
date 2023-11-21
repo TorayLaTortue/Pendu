@@ -10,7 +10,7 @@ int max(int a, int b) {
 }
 
 int fichierScore(int c, char *n){
-    FILE *fichier = fopen("score.txt", "w");
+    FILE *fichier = fopen("score.txt", "a");
 
     // Vérifiez si l'ouverture du fichier a reussi sinon afficher un code erreur
     if (fichier == NULL) {
@@ -19,7 +19,7 @@ int fichierScore(int c, char *n){
     }
 
     // Écrivez dans le fichier
-    fprintf(fichier, "Score de %s : %d \n",n ,c);  // Ecrire le score
+    fprintf(fichier, "Score de %s : %d \n", n, c);  // Écrire le score sur une nouvelle ligne
     fclose(fichier);
 }
 

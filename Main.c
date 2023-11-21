@@ -7,6 +7,8 @@
 
 int main(void)
 {
+   while (1 == 1)
+   {
    char nom[10] = "Aucun nom"; 
    char mot[25];
    char lettre;
@@ -143,7 +145,7 @@ int main(void)
    {
       printf("\n \n Bravo %s vous avez reussi en %d essai \n", nom, y);
       score = longueur * 2.5 - y;
-      printf("votre score est de : %d ", score);
+      printf("votre score est de : %d \n", score);
       fichierScore(score, nom);
       break;
    }
@@ -155,6 +157,9 @@ int main(void)
    if (MotTrouver == 0)
    {
       printf("\n \n Perdu le mot était : %s ! \n", mot);
+      score = 0;
+      fichierScore(score, nom);
    }
-   
+
+   } //redemarage du jeu 
 }
