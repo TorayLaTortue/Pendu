@@ -25,7 +25,7 @@ int main(void)
    printf("Bienvenue dans le jeu du pendu !\n");
    printf("Entrez un Nom (Max 10 charactere) : ");
    scanf("%s", nom);
-   while(isalpha(nom)) //verifier si c'est bien une lettre qui est entrée
+   while(!isalpha(nom)) //verifier si c'est bien une lettre qui est entrée
       {
         printf("Ceci n'est pas une lettre.\n \n");
         printf("Entrez un Nom (Max 10 charactere) : ");
@@ -55,7 +55,7 @@ int main(void)
    int longueur = strlen(mot) - 1;//longueur du mot
    char tab[longueur]; // tableau de _
 
-   for (i = 0; i <= longueur; i++){// mettre des _ pour chaque lettre
+   for (i = 0; i < longueur; i++){// mettre des _ pour chaque lettre
 
       tab[i] = '_';     
       printf("%c ", tab[i]);
@@ -68,6 +68,7 @@ int main(void)
 
       printf("\n");
       scanf(" %c", &lettre);
+      lettre = tolower(lettre);
       printf("\n");
       while(!isalpha(lettre)) //verifier si c'est bien une lettre qui est entrée
       {

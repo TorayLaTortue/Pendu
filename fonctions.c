@@ -27,7 +27,7 @@ int fichierScore(int c, char *n){
 
 
 
-const char ImagePendue (int y) {
+const char ImagePendue(int y) {
 
         switch (y) {
             case 1:
