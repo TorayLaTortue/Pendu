@@ -25,7 +25,29 @@ int fichierScore(int c, char *n){
 
 int scoreTrier()
 {
-   
+  FILE *fichier;
+    char ligne[100];//longueur max de la ligne
+    fichier = fopen("score.txt", "r");
+    if (fichier == NULL) {
+        fprintf(stderr, "Impossible d'ouvrir le fichier score.txt.\n");
+        return 1;  
+    }
+    // Parcourir le fichier ligne par ligne
+    while (fgets(ligne, sizeof(ligne), fichier) != NULL) {
+        // Vous pouvez faire ici ce que vous voulez avec chaque ligne
+        // Supposons que vous cherchez la phrase spécifique "Score de uwuuu :"
+        if (strstr(ligne, "Score de uwuuu :") != NULL) {
+            // Vous avez trouvé la phrase, vous pouvez extraire le score
+            int score;
+            if (sscanf(ligne, "Score de uwuuu : %d", &score) == 1) {
+                // Afficher ou stocker le score dans une variable
+                printf("Score trouvé : %d\n", score);
+            } else {
+                fprintf(stderr, "Erreur lors de l'extraction du score.\n");
+            }
+        }
+    }
+
 }
 
 

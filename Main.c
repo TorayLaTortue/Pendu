@@ -3,7 +3,8 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <time.h>
-#include "fonctions.c"           
+#include "fonctions.c" 
+#include "fonctionTriage.c"          
 
 int main(void)
 {
@@ -23,20 +24,21 @@ int main(void)
    char tab2[26];//tableau de lettre utilisé*
    int lettreDejaUtilisee = 0;//detecter si la valeur a ete utiliser
    
+   
    printf("Bienvenue dans le jeu du pendu !\n");
-   printf("Entrez un Nom (Max 10 charactere) : ");
+   printf("Entrez un Nom (Max 10 charactere alphabetiques) : ");
    scanf("%s", nom);
    while(!isalpha(nom)) //verifier si c'est bien une lettre qui est entrée
       {
         printf("Ceci n'est pas une lettre.\n \n");
         printf("Entrez un Nom (Max 10 charactere) : ");
-        scanf(" %s", &nom);
+        scanf(" %s", nom);
       }
    printf("Vous avez entré le nom : %s\n", nom);
 
 
    srand(time(NULL)); //Choisir une valeur aléatoire par rapport a l'heure
-   int nombreAleatoire = (rand() % 835);
+   int nombreAleatoire = (rand() % 835); //une valeur aléatoire des 835
    FILE *fichier = fopen("words.txt", "r");
    char ligne[100]; // Longueur d'une ligne
     int numeroLigne = 1; // Compteur pour le numéro de la ligne
@@ -49,7 +51,7 @@ int main(void)
         }
    }
    fclose(fichier); 
-   strncpy(mot, ligne, 100);
+   strncpy(mot, ligne, 25);
    ligne[strcspn(ligne, "\n")] = '\0';
    mot[10] = '\0';
    
@@ -146,6 +148,7 @@ int main(void)
       score = longueur * 2.5 - y;
       printf("votre score est de : %d \n", score);
       fichierScore(score, nom);
+      topScore();
       break;
    }
    
