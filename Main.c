@@ -46,7 +46,7 @@ int main(void)
    while(fgets(ligne, sizeof(ligne), fichier) != NULL) {
         numeroLigne++;
         if (numeroLigne == nombreAleatoire) {
-            printf("Ligne: %s", ligne); //Print la solution au debut
+            //printf("Ligne: %s", ligne); //Print la solution au debut
             break; // Sortir de la boucle une fois que la ligne aléatoire a été lue
         }
    }

@@ -132,7 +132,7 @@ const char ImagePendue(int y) {
                printf("__________\n");
                printf("|| /      |\n");
                printf("||/       |\n");
-               printf("||       ( )\n");
+               printf("||      (UwU)\n");
                printf("||        |\n");
                printf("||       /|\\ \n");
                printf("||        |\n");
