@@ -51,9 +51,9 @@ int main(void)
         }
    }
    fclose(fichier); 
-   strncpy(mot, ligne, 25);
+   strncpy(mot, ligne, 25);//mettre le mot par rapport a la ligne choissis
    ligne[strcspn(ligne, "\n")] = '\0';
-   mot[10] = '\0';
+   mot[10] = '\0';//met un caractere nul a la fin du mot
    
    int longueur = strlen(mot) - 1;//longueur du mot
    char tab[longueur]; // tableau de _
